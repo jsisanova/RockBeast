@@ -4,6 +4,8 @@ package com.example.android.rockbeast.activity;
  * {@link Song} represents a song that contains song image, song name, interpreter name and album name
  */
 public class Song {
+    /** Song image */
+    private int mImageResourceId;
 
     /** Song name */
     private String mSongName;
@@ -14,17 +16,13 @@ public class Song {
     /** Album name */
     private String mAlbumName;
 
-    /** Song image */
-    private int mImageResourceId;
-
     /**
      * Create a new Song object.
      *
-     * @param imageResourceId is drawable reference ID that corresponds to the Android version
-     * @param songName is the word in a language that the user is already familiar with
-     *                           (such as English)
-     * @param songInterpreter is the word in the Miwok language
-     * @param  albumName is the name of album where the song is
+     * @param imageResourceId is drawable reference ID for song image
+     * @param songName is the name of a song
+     * @param songInterpreter is the interpreter of the song
+     * @param  albumName is the name of album
      */
     public Song(int imageResourceId, String songName, String songInterpreter, String albumName) {
         mImageResourceId = imageResourceId;
@@ -41,21 +39,21 @@ public class Song {
     }
 
     /**
-     * Get the default translation of the word.
+     * Get the song name
      */
     public String getSongName() {
         return mSongName;
     }
 
     /**
-     * Get the Miwok translation of the word.
+     * Get the interpreter name
      */
     public String getSongInterpreter() {
         return mSongInterpreter;
     }
 
     /**
-     * Get the default translation of the word.
+     * Get the album name
      */
     public String getAlbumName() {
         return mAlbumName;

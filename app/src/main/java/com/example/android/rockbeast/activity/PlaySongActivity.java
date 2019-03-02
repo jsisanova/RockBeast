@@ -40,13 +40,21 @@ public class PlaySongActivity extends AppCompatActivity {
             }
         });
 
+//       Get the extras that are put into the intent
+        ImageView songImageView = (ImageView) findViewById(R.id.song_image_text_view);
+        int songImageValue = getIntent().getIntExtra("songImage", 0);
+        songImageView.setImageResource(songImageValue);
 
+        TextView songNameTextView = (TextView) findViewById(R.id.song_name_text_view);
+        String songNameStringValue = getIntent().getStringExtra("songName");
+        songNameTextView.setText(songNameStringValue);
 
+        TextView interpreterNameTextView = (TextView) findViewById(R.id.interpreter_name_text_view);
+        String interpreterNameStringValue = getIntent().getStringExtra("interpreterName");
+        interpreterNameTextView.setText(interpreterNameStringValue);
 
-//        ImageView songPictureTextView = (ImageView) findViewById(R.id.song_picture_text_view);
-//        songPictureTextView.setImageResource(R.id.);
-        Intent mIntent = getIntent();
-        String stringValue = mIntent.getStringExtra("stringVariableName");
-
+        TextView albumNameTextView = (TextView) findViewById(R.id.album_name_text_view);
+        String albumNameStringValue = getIntent().getStringExtra("albumName");
+        albumNameTextView.setText(albumNameStringValue);
     }
 }

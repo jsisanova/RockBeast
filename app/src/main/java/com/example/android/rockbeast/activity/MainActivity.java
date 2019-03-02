@@ -65,21 +65,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-//
-
+//      When user clicks on an item, pass the intent data of that clicked item and
+//      fetch the right intent data from the songs array
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-//                Intent myIntent = new Intent(view.getContext(), PlaySongActivity.class);
-//                startActivityForResult(myIntent, 0);
-
-//                Intent myIntent = new Intent(MainActivity.this, PlaySongActivity.class);
-//                myIntent.putStringArrayListExtra("arrayListVariableName", );
-//                startActivity(myIntent);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
                 Intent myIntent = new Intent(MainActivity.this, PlaySongActivity.class);
-                myIntent.putExtra("stringVariableName", songs.get(position).getSongName());
+                myIntent.putExtra("songImage", songs.get(position).getImageResourceId());
+                myIntent.putExtra("songName", songs.get(position).getSongName());
+                myIntent.putExtra("interpreterName", songs.get(position).getSongInterpreter());
+                myIntent.putExtra("albumName", songs.get(position).getAlbumName());
                 startActivity(myIntent);
             }
         });
