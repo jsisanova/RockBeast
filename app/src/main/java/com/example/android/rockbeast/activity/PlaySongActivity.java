@@ -45,5 +45,8 @@ public class PlaySongActivity extends AppCompatActivity {
 
 //        ImageView songPictureTextView = (ImageView) findViewById(R.id.song_picture_text_view);
 //        songPictureTextView.setImageResource(R.id.);
+        Intent mIntent = getIntent();
+        String stringValue = mIntent.getStringExtra("stringVariableName");
+
     }
 }

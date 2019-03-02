@@ -72,12 +72,15 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Intent myIntent = new Intent(view.getContext(), PlaySongActivity.class);
-                startActivityForResult(myIntent, 0);
+//                Intent myIntent = new Intent(view.getContext(), PlaySongActivity.class);
+//                startActivityForResult(myIntent, 0);
 
 //                Intent myIntent = new Intent(MainActivity.this, PlaySongActivity.class);
 //                myIntent.putStringArrayListExtra("arrayListVariableName", );
 //                startActivity(myIntent);
+                Intent myIntent = new Intent(MainActivity.this, PlaySongActivity.class);
+                myIntent.putExtra("stringVariableName", songs.get(position).getSongName());
+                startActivity(myIntent);
             }
         });
 

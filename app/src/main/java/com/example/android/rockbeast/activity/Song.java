@@ -1,25 +1,24 @@
 package com.example.android.rockbeast.activity;
 
 /**
- * {@link Song} represents a vocabulary word that the user wants to learn.
- * It contains a default translation and a Miwok translation for that word.
+ * {@link Song} represents a song that contains song image, song name, interpreter name and album name
  */
 public class Song {
 
-    /** Default translation for the word */
+    /** Song name */
     private String mSongName;
 
-    /** Miwok translation for the word */
+    /** Song interpreter name */
     private String mSongInterpreter;
 
-    /** Default translation for the word */
+    /** Album name */
     private String mAlbumName;
 
-    // Drawable resource ID
+    /** Song image */
     private int mImageResourceId;
 
     /**
-     * Create a new Word object.
+     * Create a new Song object.
      *
      * @param imageResourceId is drawable reference ID that corresponds to the Android version
      * @param songName is the word in a language that the user is already familiar with
