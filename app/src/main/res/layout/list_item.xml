@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout for a single list item view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/song_image_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/song_image"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/song_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/song_name_example" />
+
+    <TextView
+        android:id="@+id/interpreter_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/song_interpreter_example"/>
+
+    <TextView
+        android:id="@+id/album_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/albumTextColor"
+        tools:text="@string/album_example" />
+</LinearLayout>

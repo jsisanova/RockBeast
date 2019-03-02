@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Rock Beast</string>
+    <string name="song_name_example">Song Name</string>
+    <string name="song_interpreter_example">Song Interpreter</string>
+    <string name="album_example">Album Name</string>
+    <string name="song_name">Song Name</string>
+    <string name="interpreter_name">Interpreter Name</string>
+    <string name="album_name">Album Name</string>
+    <string name="now_playing_button">Now Playing</string>
+    <string name="back_button">Back</string>
+    <string name="music_library_activity_purpose">Music Library</string>
+    <string name="current_song_activity_purpose">Currently Played Song</string>
+</resources>

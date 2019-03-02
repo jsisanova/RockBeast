@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout for a single list item view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Activity purpose -->
+        <TextView
+            style="@style/ActivityPurposeTheme"
+            android:text="@string/music_library_activity_purpose"/>
+
+        <!-- Get to MainActivity -->
+        <Button
+            android:id="@+id/button_to_main_activity"
+            style="@style/ButtonTheme"
+            android:text="@string/back_button"/>
+    </RelativeLayout>
+
+    <!-- Image of the currently played song -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/song_picture_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/song_image" />
+
+        <ImageView
+            android:id="@+id/song_play_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/image_play_icon" />
+    </RelativeLayout>
+
+    <!-- Specify the song that is currently played -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/song_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="6dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            tools:text="@string/song_name" />
+
+        <TextView
+            android:id="@+id/interpreter_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            tools:text="@string/interpreter_name"/>
+
+        <TextView
+            android:id="@+id/album_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"
+            android:textColor="@color/albumTextColor"
+            tools:text="@string/album_name"/>
+
+        <!-- Play controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/heart_icon"
+                style="@style/PlayControls"
+                android:src="@drawable/heart_icon" />
+            <ImageButton
+                android:id="@+id/song_backward_icon"
+                style="@style/PlayControls"
+                android:src="@drawable/backward_icon" />
+            <ImageButton
+                android:id="@+id/play_icon"
+                style="@style/PlayControls"
+                android:src="@drawable/play_icon" />
+            <ImageButton
+                android:id="@+id/song_forward_icon"
+                style="@style/PlayControls"
+                android:src="@drawable/forward_icon" />
+            <ImageButton
+                android:id="@+id/replay_icon"
+                style="@style/PlayControls"
+                android:src="@drawable/replay_icon" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

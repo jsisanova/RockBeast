@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Activity purpose -->
+        <TextView
+            style="@style/ActivityPurposeTheme"
+            android:text="@string/music_library_activity_purpose"/>
+
+        <!-- Get to PlaySongActivity -->
+        <Button
+            android:id="@+id/button_to_play_song_activity"
+            style="@style/ButtonTheme"
+            android:text="@string/now_playing_button"/>
+    </RelativeLayout>
+
+    <!-- GridView to be displayed -->
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"/>
+</LinearLayout>
+
