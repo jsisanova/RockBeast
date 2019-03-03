@@ -42,10 +42,10 @@ public class SongAdapter extends ArrayAdapter<Song> {
         Song currentSong = getItem(position);
 
         // Find the TextView and ImageView in the list_item.xml layout
-        ImageView songImageView = (ImageView) listItemView.findViewById(R.id.song_image_text_view);
-        TextView songName = (TextView) listItemView.findViewById(R.id.song_name_text_view);
-        TextView songInterpreter = (TextView) listItemView.findViewById(R.id.interpreter_name_text_view);
-        TextView albumName = (TextView) listItemView.findViewById(R.id.album_name_text_view);
+        ImageView songImageView = (ImageView) listItemView.findViewById(R.id.list_item_song_image_text_view);
+        TextView songName = (TextView) listItemView.findViewById(R.id.list_item_song_name_text_view);
+        TextView songInterpreter = (TextView) listItemView.findViewById(R.id.list_item_interpreter_name_text_view);
+        TextView albumName = (TextView) listItemView.findViewById(R.id.list_item_album_name_text_view);
 
         // Populate the data into the template view using the data object
         songImageView.setImageResource(currentSong.getImageResourceId());
