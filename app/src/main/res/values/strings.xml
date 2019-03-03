@@ -6,8 +6,10 @@
     <string name="song_name">Song Name</string>
     <string name="interpreter_name">Interpreter Name</string>
     <string name="album_name">Album Name</string>
-    <string name="now_playing_button">Now Playing</string>
-    <string name="back_button">Back</string>
+    <string name="feedback_button">Feedback></string>
+    <string name="back_button">&lt; Back to library</string>
     <string name="music_library_activity_purpose">Music Library</string>
     <string name="current_song_activity_purpose">Currently Played Song</string>
+    <string name="feedback_activity_purpose">Feedback</string>
+    <string name="thank_you">Thank you for using our application. Please give us your suggestions and feedback.</string>
 </resources>

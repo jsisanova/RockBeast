@@ -22,7 +22,7 @@ public class Song {
      * @param imageResourceId is drawable reference ID for song image
      * @param songName is the name of a song
      * @param songInterpreter is the interpreter of the song
-     * @param  albumName is the name of album
+     * @param albumName is the name of album
      */
     public Song(int imageResourceId, String songName, String songInterpreter, String albumName) {
         mImageResourceId = imageResourceId;

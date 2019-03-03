@@ -18,6 +18,7 @@
         android:id="@+id/song_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         tools:text="@string/song_name_example" />
 
     <TextView
@@ -30,6 +31,7 @@
         android:id="@+id/album_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
         android:textColor="@color/albumTextColor"
         tools:text="@string/album_example" />
 </LinearLayout>

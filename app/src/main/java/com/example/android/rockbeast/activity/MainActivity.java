@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.android.rockbeast.R;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,55 +22,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.song_list);
 
-        // Create a list of words
+        // Create a list of songs
         final ArrayList<Song> songs = new ArrayList<Song>();
 
-        songs.add(new Song(R.drawable.pink_floyd, "Wish You Were HereWish You Were HerWish You Were HerWish You Were Her", "Pink Floyd", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.ac_dc, "Wish You Were Here", "AC/DC", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.led_zeppelin, "Wish You Were Here", "Led Zeppelin", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.deep_purple, "Wish You Were Here", "Deep Purple", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.nirvana, "Wish You Were Here", "Nirvana", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.guns_n_roses, "Wish You Were Here", "Guns N' Roses", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.iron_maiden, "Wish You Were Here", "Iron Maiden", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.kiss, "Wish You Were Here", "Kiss", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.aerosmith, "Wish You Were Here", "Aerosmith", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.metallica, "Wish You Were Here", "Metallica", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.rolling_stones, "Wish You Were Here", "Rolling Stones", "Wish You Were Here"));
-        songs.add(new Song(R.drawable.queen, "Wish You Were Here", "Queen", "Wish You Were Here"));
+        songs.add(new Song(R.drawable.pink_floyd, "Another Brick in the Wall", "Pink Floyd", "The Wall"));
+        songs.add(new Song(R.drawable.ac_dc, "Highway to Hell", "AC/DC", "Highway to Hell"));
+        songs.add(new Song(R.drawable.led_zeppelin, "Stairway to Heaven", "Led Zeppelin", "Led Zeppelin IV"));
+        songs.add(new Song(R.drawable.deep_purple, "Smoke on the Water", "Deep Purple", "Machine Head"));
+        songs.add(new Song(R.drawable.nirvana, "Smells Like Teen Spirit ", "Nirvana", "Nevermind"));
+        songs.add(new Song(R.drawable.guns_n_roses, "Sweet Child O' Mine", "Guns N' Roses", "Appetite for Destruction"));
+        songs.add(new Song(R.drawable.iron_maiden, "The Trooper", "Iron Maiden", "Peace of Mind"));
+        songs.add(new Song(R.drawable.kiss, "Black Diamond", "Kiss", "Kiss"));
+        songs.add(new Song(R.drawable.aerosmith, "Dream On", "Aerosmith", "Aerosmith"));
+        songs.add(new Song(R.drawable.metallica, "The Unforgiven II", "Metallica", "Reload"));
+        songs.add(new Song(R.drawable.rolling_stones, "Paint It Black", "Rolling Stones", "Aftermath"));
+        songs.add(new Song(R.drawable.queen, "Bohemian Rhapsody", "Queen", "A Night at the Opera"));
 
-        // Create a {@link WordAdapter}, whose data source is a list of {@link Word}s. The
-        // adapter knows how to create list items for each item in the list.
+        // Create a {@link SongAdapter}, whose data source is a list of {@link Song}s.
         SongAdapter adapter = new SongAdapter(this, songs);
 
-
-        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list file.
+        // Find the {@link GridView} with the view ID called list, which is declared in the song_list file.
         final GridView gridView = (GridView) findViewById(R.id.list);
 
-
-        // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
-        // {@link ListView} will display list items for each {@link Word} in the list.
+        // Make the {@link GridView} use the {@link SongAdapter} we created above, so that the
+        // {@link GridView} will display list items for each {@link Song} in the list.
         gridView.setAdapter(adapter);
 
-
-//        Find the view that shows the PlaySongActivity
-        Button buttonToPlaySongActivity = (Button) findViewById(R.id.button_to_play_song_activity);
+//        Find the view that shows the FeedbackActivity
+        Button buttonToPlaySongActivity = (Button) findViewById(R.id.button_to_feedback_activity);
 //      Set a clickListener on that view
         buttonToPlaySongActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainActivityIntent = new Intent(MainActivity.this, PlaySongActivity.class);
+                Intent mainActivityIntent = new Intent(MainActivity.this, FeedbackActivity.class);
                 startActivity(mainActivityIntent);
             }
         });
 
-
-//      When user clicks on an item, pass the intent data of that clicked item and
-//      fetch the right intent data from the songs array
+//      When user clicks on an item, fetch the right intent data of that clicked item from the songs array and pass them into PlaySongActivity
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
                 Intent myIntent = new Intent(MainActivity.this, PlaySongActivity.class);
                 myIntent.putExtra("songImage", songs.get(position).getImageResourceId());
                 myIntent.putExtra("songName", songs.get(position).getSongName());
@@ -78,7 +70,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
-
-
     }
 }

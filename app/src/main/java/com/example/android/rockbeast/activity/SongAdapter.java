@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.android.rockbeast.R;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class SongAdapter extends ArrayAdapter<Song> {
 
     /** @param context  The current context. Used to inflate the layout file.
-        @param songs    A List ofSong objects to display in a list
+        @param songs    A List of Song objects to display in a list
      */
     public SongAdapter(Context context, ArrayList<Song> songs) {
         super(context, 0, songs);
@@ -52,8 +53,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
         songInterpreter.setText(currentSong.getSongInterpreter());
         albumName.setText(currentSong.getAlbumName());
 
-        // Return the whole list item layout from the Word object
-        // so that it can be shown in the ListView on screen
+        // Return the whole list item layout from the Song object so that it can be shown in the GridView on screen
         return listItemView;
     }
 }

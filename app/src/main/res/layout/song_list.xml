@@ -14,11 +14,11 @@
             style="@style/ActivityPurposeTheme"
             android:text="@string/music_library_activity_purpose"/>
 
-        <!-- Get to PlaySongActivity -->
+        <!-- Get to {@link FeedbackActivity} -->
         <Button
-            android:id="@+id/button_to_play_song_activity"
+            android:id="@+id/button_to_feedback_activity"
             style="@style/ButtonTheme"
-            android:text="@string/now_playing_button"/>
+            android:text="@string/feedback_button"/>
     </RelativeLayout>
 
     <!-- GridView to be displayed -->
@@ -29,4 +29,3 @@
         android:layout_height="match_parent"
         android:numColumns="2"/>
 </LinearLayout>
-

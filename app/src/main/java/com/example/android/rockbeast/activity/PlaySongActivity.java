@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.android.rockbeast.R;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class PlaySongActivity extends AppCompatActivity {
     @Override
@@ -23,7 +24,7 @@ public class PlaySongActivity extends AppCompatActivity {
 
 //      Find the view that shows the Main Activity
         Button buttonToMainActivity = (Button) findViewById(R.id.button_to_main_activity);
-//       Set a clickListener on that view
+//      Set a clickListener on that view
         buttonToMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,16 +33,8 @@ public class PlaySongActivity extends AppCompatActivity {
             }
         });
 
-//      Change play icon control to pause icon when clicked
-        final ImageButton playIcon = (ImageButton)findViewById(R.id.play_icon);
-        playIcon.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                playIcon.setImageResource(R.drawable.pause_icon);
-            }
-        });
-
-//       Get the extras that are put into the intent
-        ImageView songImageView = (ImageView) findViewById(R.id.song_image_text_view);
+//      Get the extras that are put into the intent
+        ImageView songImageView = (ImageView) findViewById(R.id.song_picture_text_view);
         int songImageValue = getIntent().getIntExtra("songImage", 0);
         songImageView.setImageResource(songImageValue);
 
@@ -56,5 +49,13 @@ public class PlaySongActivity extends AppCompatActivity {
         TextView albumNameTextView = (TextView) findViewById(R.id.album_name_text_view);
         String albumNameStringValue = getIntent().getStringExtra("albumName");
         albumNameTextView.setText(albumNameStringValue);
+
+//      Change play icon control to pause icon when clicked
+        final ImageButton playIcon = (ImageButton)findViewById(R.id.play_icon);
+        playIcon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                playIcon.setImageResource(R.drawable.pause_icon);
+            }
+        });
     }
 }

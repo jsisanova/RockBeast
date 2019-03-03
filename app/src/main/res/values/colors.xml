@@ -3,7 +3,10 @@
     <color name="colorPrimary">#4d4d4d</color>
     <color name="colorPrimaryDark">#262626</color>
     <color name="colorAccent">#595959</color>
+    <!-- Color of the screen background -->
     <color name="windowBackground">#808080</color>
+    <!-- Color of the most of the text -->
     <color name="textColor">#FFFFFF</color>
+    <!-- Color of the text for album names -->
     <color name="albumTextColor">#d9d9d9</color>
 </resources>

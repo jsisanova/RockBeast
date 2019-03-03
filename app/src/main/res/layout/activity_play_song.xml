@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Layout for a single list item view -->
+<!-- Layout for a currently played song -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,6 +35,7 @@
             android:scaleType="centerCrop"
             tools:src="@drawable/song_image" />
 
+        <!-- PLay control arrow in the middle of the song image -->
         <ImageView
             android:id="@+id/song_play_icon"
             android:layout_width="50dp"

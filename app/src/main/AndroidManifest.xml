@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.PlaySongActivity"></activity>
+        <activity android:name=".activity.PlaySongActivity"
+            android:label="Now Playing"></activity>
+        <activity android:name=".activity.FeedbackActivity"
+            android:label="Troll Time"></activity>
     </application>
-
 </manifest>
