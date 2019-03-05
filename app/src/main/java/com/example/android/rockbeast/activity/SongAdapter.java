@@ -33,19 +33,31 @@ public class SongAdapter extends ArrayAdapter<Song> {
     @Override
     // Get a list item view that we can use
     public View getView(int position, View convertView, ViewGroup parent) {
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+
+//      Use ViewHolder to optimize the GridView
+//        MainActivity.ViewHolder holder;
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+//            holder = new MainActivity.ViewHolder();
+//            holder.songImageView = (ImageView) convertView.findViewById(R.id.list_item_song_image_text_view);
+//            holder.songName = (TextView) convertView.findViewById(R.id.list_item_song_name_text_view);
+//            holder.songInterpreter = (TextView) convertView.findViewById(R.id.list_item_interpreter_name_text_view);
+//            holder.albumName = (TextView) convertView.findViewById(R.id.list_item_album_name_text_view);
+//            convertView.setTag(holder);
         }
+//        else {
+//            holder = (MainActivity.ViewHolder) convertView.getTag();
+//        }
 
         //Get the {@link Word} object located at this position in the list
         Song currentSong = getItem(position);
 
         // Find the TextView and ImageView in the list_item.xml layout
-        ImageView songImageView = (ImageView) listItemView.findViewById(R.id.list_item_song_image_text_view);
-        TextView songName = (TextView) listItemView.findViewById(R.id.list_item_song_name_text_view);
-        TextView songInterpreter = (TextView) listItemView.findViewById(R.id.list_item_interpreter_name_text_view);
-        TextView albumName = (TextView) listItemView.findViewById(R.id.list_item_album_name_text_view);
+        ImageView songImageView = (ImageView) convertView.findViewById(R.id.list_item_song_image_text_view);
+        TextView songName = (TextView) convertView.findViewById(R.id.list_item_song_name_text_view);
+        TextView songInterpreter = (TextView) convertView.findViewById(R.id.list_item_interpreter_name_text_view);
+        TextView albumName = (TextView) convertView.findViewById(R.id.list_item_album_name_text_view);
 
         // Populate the data into the template view using the data object
         songImageView.setImageResource(currentSong.getImageResourceId());
@@ -53,7 +65,12 @@ public class SongAdapter extends ArrayAdapter<Song> {
         songInterpreter.setText(currentSong.getSongInterpreter());
         albumName.setText(currentSong.getAlbumName());
 
+//        holder.songImageView.setImageResource(currentSong.getImageResourceId());
+//        holder.songName.setText(currentSong.getSongName());
+//        holder.songInterpreter.setText(currentSong.getSongInterpreter());
+//        holder.albumName.setText(currentSong.getAlbumName());
+
         // Return the whole list item layout from the Song object so that it can be shown in the GridView on screen
-        return listItemView;
+        return convertView;
     }
 }

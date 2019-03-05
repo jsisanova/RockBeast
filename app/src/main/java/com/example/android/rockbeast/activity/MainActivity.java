@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,12 +16,18 @@ import com.example.android.rockbeast.R;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+//    Use Butterknife library
+//    @BindView(R.id.button_to_feedback_activity) Button buttonToPlaySongActivity;}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.song_list);
+//        ButterKnife.bind(this);
 
         // Create a list of songs
         final ArrayList<Song> songs = new ArrayList<Song>();
@@ -71,4 +78,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+//    static class ViewHolder {
+//            ImageView songImageView;
+//            TextView songName;
+//            TextView songInterpreter;
+//            TextView albumName;
+//    }
 }
