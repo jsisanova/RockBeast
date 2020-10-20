@@ -79,10 +79,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    static class ViewHolder {
-//            ImageView songImageView;
-//            TextView songName;
-//            TextView songInterpreter;
-//            TextView albumName;
-//    }
+
+    // Our ViewHolder class resides as a static inner class inside our Activity (or Fragment)
+    static class ViewHolder {
+            ImageView songImageView;
+            TextView songName;
+            TextView songInterpreter;
+            TextView albumName;
+    }
 }
